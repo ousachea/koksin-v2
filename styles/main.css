@@ -1905,3 +1905,845 @@ a {
     transition: none;
   }
 }
+
+/* ── Discovery layout: hero ──────────────────────────────────────── */
+.disc-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 0 var(--gutter);
+}
+
+.disc-hero-glow {
+  position: absolute;
+  top: -180px;
+  left: 50%;
+  width: min(1100px, 92vw);
+  height: 620px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(38% 46% at 30% 52%, rgba(8, 144, 218, 0.28) 0%, rgba(8, 144, 218, 0) 70%),
+    radial-gradient(34% 42% at 72% 42%, rgba(120, 190, 240, 0.32) 0%, rgba(120, 190, 240, 0) 72%),
+    radial-gradient(30% 38% at 52% 74%, rgba(247, 226, 196, 0.5) 0%, rgba(247, 226, 196, 0) 72%);
+  filter: blur(10px);
+}
+
+.disc-hero-inner {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 72px 0 64px;
+  text-align: center;
+}
+
+.disc-hero-title {
+  margin: 0 0 12px;
+  text-wrap: balance;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.disc-hero-sub {
+  margin: 0 auto 28px;
+  max-width: 60ch;
+  text-wrap: pretty;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.disc-search {
+  display: flex;
+  align-items: center;
+  max-width: 720px;
+  margin: 0 auto 18px;
+  padding: 6px 6px 6px 4px;
+  background: var(--surface);
+  border-radius: 999px;
+  box-shadow: var(--shadow-border), 0 12px 34px -20px oklch(0 0 0 / 0.22);
+  transition: box-shadow 150ms ease-out;
+}
+
+.disc-search:hover {
+  box-shadow: var(--shadow-border-hover), 0 14px 36px -20px oklch(0 0 0 / 0.26);
+}
+
+.disc-search-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-height: 40px;
+  padding: 6px 14px;
+  border-right: 1px solid var(--border-soft);
+  cursor: pointer;
+}
+
+.disc-search-field-last {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0.8;
+  min-height: 40px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+.disc-search-icon {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  color: var(--muted);
+}
+
+.disc-search-text {
+  font-size: 13.5px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.disc-search-btn {
+  min-height: 40px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition-property: background-color, scale;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.disc-search-btn:hover {
+  background: #0f2028;
+}
+
+.disc-search-btn:active {
+  scale: 0.96;
+}
+
+.disc-hero-meta {
+  margin: 0 0 18px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.disc-hero-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--surface);
+  border-radius: 999px;
+  box-shadow: var(--shadow-border);
+  transition-property: box-shadow, scale;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.disc-hero-app:hover {
+  box-shadow: var(--shadow-border-hover);
+}
+
+.disc-hero-app:active {
+  scale: 0.96;
+}
+
+.disc-hero-app-soon {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--muted-light);
+}
+
+.disc-hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.disc-hero-chip {
+  display: flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  font-size: 13px;
+  color: var(--ink);
+  background: var(--surface);
+  border-radius: 999px;
+  box-shadow: var(--shadow-border);
+  transition-property: box-shadow, color, scale;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.disc-hero-chip:hover {
+  box-shadow: var(--shadow-border-hover);
+  color: var(--blue);
+}
+
+.disc-hero-chip:active {
+  scale: 0.96;
+}
+
+/* ── Discovery layout: partner rails ─────────────────────────────── */
+.disc-rails {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px var(--gutter) 0;
+}
+
+.disc-rail {
+  margin-bottom: 44px;
+}
+
+.disc-rail-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.disc-rail-title {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.disc-rail-next {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: var(--shadow-border);
+  transition-property: box-shadow, scale;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.disc-rail-next::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
+
+.disc-rail-next:hover {
+  box-shadow: var(--shadow-border-hover);
+}
+
+.disc-rail-next:active {
+  scale: 0.96;
+}
+
+.disc-rail-next-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.disc-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.disc-card {
+  min-width: 0;
+}
+
+.disc-card-photo {
+  position: relative;
+  display: block;
+  height: 158px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  outline: var(--image-outline);
+  outline-offset: -1px;
+  transition: scale 150ms ease-out;
+}
+
+.disc-card:hover .disc-card-photo {
+  scale: 1.01;
+}
+
+.disc-card-photo-a {
+  background: linear-gradient(135deg, #dfe9e2, #b7cec1 55%, #8aa89a);
+}
+
+.disc-card-photo-b {
+  background: linear-gradient(135deg, #e6e3de, #cbc3b8 55%, #a3968a);
+}
+
+.disc-card-photo-c {
+  background: linear-gradient(135deg, #e2ecf4, #bcd2e2 55%, #91adc4);
+}
+
+.disc-card-photo-d {
+  background: linear-gradient(135deg, #f0e6db, #dcc7b2 55%, #bfa189);
+}
+
+.disc-card-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 3px 9px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+}
+
+.disc-card-heart {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  font-size: 14px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+}
+
+.disc-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.disc-card-name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.disc-card-rating {
+  flex: none;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.disc-card-star {
+  color: #e5a93c;
+}
+
+.disc-card-area {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.disc-card-meta {
+  margin: 1px 0 0;
+  font-size: 12px;
+  color: var(--muted-light);
+}
+
+/* ── Discovery layout: app block ─────────────────────────────────── */
+.disc-app {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  align-items: end;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px var(--gutter) 0;
+}
+
+.disc-app-copy {
+  padding-bottom: 40px;
+}
+
+.disc-app-eyebrow {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.disc-app-title {
+  margin: 0 0 12px;
+  max-width: 12ch;
+  text-wrap: balance;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.disc-app-text {
+  margin: 0 0 22px;
+  max-width: 42ch;
+  text-wrap: pretty;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.disc-qr {
+  width: 96px;
+  height: 96px;
+  padding: 6px;
+  fill: var(--ink);
+  background: var(--surface);
+  border-radius: 10px;
+  box-shadow: var(--shadow-border);
+}
+
+.disc-app-visual {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.disc-app-visual .phones {
+  height: 400px;
+  margin: 0;
+}
+
+/* ── Discovery layout: reviews ───────────────────────────────────── */
+.disc-reviews {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px var(--gutter) 0;
+}
+
+.disc-reviews-title {
+  margin: 0 0 16px;
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.disc-review-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.disc-review {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--surface);
+  border-radius: 14px;
+  box-shadow: var(--shadow-border);
+}
+
+.disc-review-stars {
+  margin: 0 0 10px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #e5a93c;
+}
+
+.disc-review-head {
+  margin: 0 0 8px;
+  text-wrap: balance;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.disc-review-body {
+  margin: 0 0 20px;
+  text-wrap: pretty;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.disc-review-person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.disc-review-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 999px;
+  background: var(--blue-tint);
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.disc-review-name {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.disc-review-place {
+  font-size: 11.5px;
+  color: var(--muted-light);
+}
+
+/* ── Discovery layout: stats ─────────────────────────────────────── */
+.disc-stats {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 88px var(--gutter) 0;
+  text-align: center;
+}
+
+.disc-stats-title {
+  margin: 0 0 8px;
+  text-wrap: balance;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.disc-stats-sub {
+  margin: 0 0 40px;
+  text-wrap: pretty;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.disc-stats-big {
+  margin: 0;
+  font-size: 56px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--blue);
+}
+
+.disc-stats-big-label {
+  margin: 4px 0 40px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.disc-stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+}
+
+.disc-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.disc-stat-value {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.disc-stat-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ── Discovery layout: business block ────────────────────────────── */
+.disc-business {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  align-items: end;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 88px var(--gutter) 0;
+}
+
+.disc-business-copy {
+  padding-bottom: 40px;
+}
+
+.disc-business-title {
+  margin: 0 0 12px;
+  text-wrap: balance;
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.disc-business-text {
+  margin: 0 0 22px;
+  max-width: 44ch;
+  text-wrap: pretty;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.disc-business-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--ink);
+  border-radius: 999px;
+  transition-property: background-color, scale;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.disc-business-btn:hover {
+  background: #0f2028;
+}
+
+.disc-business-btn:active {
+  scale: 0.96;
+}
+
+.disc-business-btn-arrow {
+  display: inline-block;
+}
+
+.disc-business-rating {
+  margin: 28px 0 2px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.disc-business-stars {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #e5a93c;
+}
+
+.disc-business-visual {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.disc-business-visual .dash-mock {
+  height: 400px;
+  margin: 0;
+}
+
+.disc-business-visual .dash-frame {
+  inset: 0 -40px auto 0;
+  height: 470px;
+}
+
+/* ── Discovery layout: browse by city ────────────────────────────── */
+.disc-cities {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 88px var(--gutter) 96px;
+}
+
+.disc-cities-title {
+  margin: 0 0 16px;
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.disc-city-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+.disc-city-tab {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 14px;
+  font-size: 12.5px;
+  color: var(--muted);
+  border-radius: 999px;
+  box-shadow: var(--shadow-border);
+}
+
+.disc-city-tab-active {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 14px;
+  font-size: 12.5px;
+  color: #fff;
+  background: var(--ink);
+  border-radius: 999px;
+}
+
+.disc-city-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.disc-city-col {
+  min-width: 0;
+}
+
+.disc-city-head {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.disc-city-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.disc-city-item {
+  margin-bottom: 8px;
+}
+
+.disc-city-link {
+  font-size: 12.5px;
+  color: var(--muted);
+  transition: color 150ms ease-out;
+}
+
+.disc-city-link:hover {
+  color: var(--blue);
+}
+
+.disc-cat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.disc-cat-chip {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 14px;
+  font-size: 12.5px;
+  color: var(--ink);
+  border-radius: 999px;
+  box-shadow: var(--shadow-border);
+  transition-property: box-shadow, color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.disc-cat-chip:hover {
+  box-shadow: var(--shadow-border-hover);
+  color: var(--blue);
+}
+
+/* ── Discovery layout: responsive ────────────────────────────────── */
+@media (max-width: 1100px) {
+  .disc-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .disc-review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .disc-app {
+    grid-template-columns: 1fr;
+  }
+
+  .disc-business {
+    grid-template-columns: 1fr;
+  }
+
+  .disc-city-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .disc-hero-title {
+    font-size: 30px;
+  }
+
+  .disc-search {
+    flex-wrap: wrap;
+    border-radius: 22px;
+    padding: 8px;
+  }
+
+  .disc-search-field {
+    flex: 1 0 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .disc-search-btn {
+    flex: 1;
+  }
+
+  .disc-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .disc-review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .disc-stats-row {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .disc-city-grid {
+    grid-template-columns: 1fr;
+  }
+}
