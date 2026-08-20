@@ -5,7 +5,8 @@ import CategoryChips from "./CategoryChips";
 import DateField from "./DateField";
 import HeroGlow from "./HeroGlow";
 import LocationField from "./LocationField";
-import { DashboardMock, PhoneMocks } from "./Mockups";
+import { DashboardMock } from "./Mockups";
+import PhoneShots from "./PhoneShots";
 import {
   cityLinks,
   newToKoksin,
@@ -51,31 +52,6 @@ function Rail({ title, items }: { title: string; items: Partner[] }) {
   );
 }
 
-// Faux QR block — a deterministic pattern, no scanning payload.
-function QrBlock() {
-  const cells = [];
-  for (let y = 0; y < 21; y += 1) {
-    for (let x = 0; x < 21; x += 1) {
-      const finder =
-        (x < 7 && y < 7) || (x > 13 && y < 7) || (x < 7 && y > 13);
-      const ring =
-        finder &&
-        (x === 0 || x === 6 || y === 0 || y === 6 || x === 14 || x === 20 || y === 14 || y === 20
-          ? true
-          : (x > 1 && x < 5 && y > 1 && y < 5) ||
-            (x > 15 && x < 19 && y > 1 && y < 5) ||
-            (x > 1 && x < 5 && y > 15 && y < 19));
-      const on = finder ? ring : ((x * 7 + y * 13 + x * y * 3) % 5) % 2 === 0;
-      if (on) cells.push(<rect key={`${x}-${y}`} x={x} y={y} width="1" height="1" />);
-    }
-  }
-  return (
-    <svg className="disc-qr" viewBox="0 0 21 21" aria-hidden="true">
-      {cells}
-    </svg>
-  );
-}
-
 // The discovery-first homepage composition: centred hero, partner rails, proof.
 export default function HomeDiscovery() {
   return (
@@ -114,17 +90,35 @@ export default function HomeDiscovery() {
       </div>
 
       <section className="disc-app">
-        <div className="disc-app-copy">
-          <p className="disc-app-eyebrow">Coming soon on iOS &amp; Android</p>
-          <h2 className="disc-app-title">Download the KOKSIN app</h2>
+        <div className="disc-app-head">
+          <h2 className="disc-app-title">
+            Every appointment you book,
+            <span className="disc-app-title-accent">in one simple app</span>
+          </h2>
           <p className="disc-app-text">
             Your bookings, your reminders, and the partners you keep going back to — all in one
             place.
           </p>
-          <QrBlock />
+          <div className="disc-app-stores">
+            <Link className="disc-app-store" href="/about">
+              <Icon name="apple" className="disc-app-store-icon" />
+              <span className="disc-app-store-copy">
+                <span className="disc-app-store-small">Coming soon to the</span>
+                <span className="disc-app-store-big">App Store</span>
+              </span>
+            </Link>
+            <Link className="disc-app-store" href="/about">
+              <Icon name="android" className="disc-app-store-icon" />
+              <span className="disc-app-store-copy">
+                <span className="disc-app-store-small">Coming soon to</span>
+                <span className="disc-app-store-big">Google Play</span>
+              </span>
+            </Link>
+          </div>
         </div>
         <div className="disc-app-visual">
-          <PhoneMocks />
+          <span className="disc-app-plate" aria-hidden="true" />
+          <PhoneShots />
         </div>
       </section>
 

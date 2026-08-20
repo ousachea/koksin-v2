@@ -1936,12 +1936,17 @@ a {
   .disc-cats-chevron {
     transition: none;
   }
+
+  .dphone:hover {
+    translate: 0;
+    scale: 1;
+  }
 }
 
 /* ── Discovery layout: hero ────────────────────────────── */
 .disc-hero {
   position: relative;
-  overflow: hidden;
+  overflow-x: clip;
   padding: 0 var(--gutter);
 }
 
@@ -1954,6 +1959,7 @@ a {
   transform: translateX(-50%);
   filter: blur(18px);
   pointer-events: none;
+  z-index: -1;
 }
 
 .disc-hero-blob-a {
@@ -2564,66 +2570,154 @@ a {
 
 /* ── Discovery layout: app block ─────────────────────────────────── */
 .disc-app {
-  display: grid;
-  grid-template-columns: 5fr 7fr;
-  align-items: end;
-  gap: 40px;
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 32px var(--gutter) 0;
+  padding: 76px 0 0;
+  text-align: center;
 }
 
-.disc-app-copy {
-  padding-bottom: 40px;
-}
-
-.disc-app-eyebrow {
-  margin: 0 0 12px;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
+.disc-app-head {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  padding: 0 var(--gutter);
 }
 
 .disc-app-title {
-  margin: 0 0 12px;
-  max-width: 12ch;
+  margin: 0 0 14px;
   text-wrap: balance;
-  font-size: 34px;
-  font-weight: 500;
-  line-height: 1.14;
-  letter-spacing: -0.02em;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
   color: var(--ink);
 }
 
+.disc-app-title-accent {
+  display: block;
+  color: var(--blue);
+}
+
 .disc-app-text {
-  margin: 0 0 22px;
-  max-width: 42ch;
+  margin: 0 auto 26px;
+  max-width: 52ch;
   text-wrap: pretty;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
   color: var(--muted);
 }
 
-.disc-qr {
-  width: 96px;
-  height: 96px;
-  padding: 6px;
-  fill: var(--ink);
-  background: var(--surface);
-  border-radius: 10px;
-  box-shadow: var(--shadow-border);
+.disc-app-stores {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.disc-app-store {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 18px;
+  border-radius: 12px;
+  background: var(--blue);
+  color: #fff;
+  text-align: left;
+  transition-property: background-color, scale;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.disc-app-store:hover {
+  background: var(--blue-dark);
+}
+
+.disc-app-store:active {
+  scale: 0.96;
+}
+
+.disc-app-store-icon {
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+
+.disc-app-store-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.disc-app-store-small {
+  font-size: 10px;
+  letter-spacing: 0.01em;
+  opacity: 0.72;
+}
+
+.disc-app-store-big {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .disc-app-visual {
   position: relative;
-  height: 490px;
-  overflow: hidden;
 }
 
-.disc-app-visual .phones {
-  margin: 0;
+.disc-app-plate {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 340px;
+  border-radius: 28px 28px 0 0;
+  background: #dcecfa;
+}
+
+.dphones {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px 0 26px;
+}
+
+.dphone {
+  flex: none;
+  padding: 7px;
+  background: linear-gradient(160deg, #333b42 0%, #0d1114 42%);
+  border-radius: 34px;
+  box-shadow: 0 26px 50px -30px oklch(0 0 0 / 0.6);
+  transition-property: translate, scale, box-shadow;
+  transition-duration: 340ms;
+  transition-timing-function: var(--ease-out);
+}
+
+.dphone:hover {
+  translate: 0 -14px;
+  scale: 1.02;
+  box-shadow: 0 38px 64px -30px oklch(0 0 0 / 0.5);
+  z-index: 3;
+}
+
+.dphone-a {
+  width: 200px;
+  margin-top: 48px;
+}
+
+.dphone-b {
+  width: 226px;
+  z-index: 2;
+}
+
+.dphone-c {
+  width: 200px;
+  margin-top: 64px;
+}
+
+.dphone-screen {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 27px;
+  background: var(--background);
 }
 
 /* ── Discovery layout: reviews ───────────────────────────────────── */
@@ -3264,10 +3358,6 @@ a {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .disc-app {
-    grid-template-columns: 1fr;
-  }
-
   .disc-business {
     grid-template-columns: 1fr;
   }
@@ -3325,17 +3415,45 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .disc-app-copy {
-    padding-bottom: 0;
+  .disc-app-title {
+    font-size: 28px;
   }
 
-  .disc-app-visual {
-    height: 280px;
+  .disc-app-stores {
+    flex-wrap: wrap;
   }
 
-  .disc-app-visual .phones {
-    scale: 0.55;
-    transform-origin: top center;
+  .disc-app-plate {
+    height: 170px;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .dphones {
+    gap: 8px;
+    padding: 10px 0 16px;
+  }
+
+  .dphone {
+    padding: 4px;
+    border-radius: 22px;
+  }
+
+  .dphone-a {
+    width: 104px;
+    margin-top: 20px;
+  }
+
+  .dphone-b {
+    width: 118px;
+  }
+
+  .dphone-c {
+    width: 104px;
+    margin-top: 28px;
+  }
+
+  .dphone-screen {
+    border-radius: 18px;
   }
 
   .disc-stats {
