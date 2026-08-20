@@ -14,6 +14,9 @@ export default function Header() {
           <Link className="header-link" href="/discovery">
             Discover
           </Link>
+          <Link className="header-link" href="/listings">
+            Listings
+          </Link>
         </nav>
         <div className="header-actions">
           <Link className="header-link" href="/about">
