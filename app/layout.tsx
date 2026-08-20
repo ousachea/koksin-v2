@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Noto_Sans_Khmer } from "next/font/google";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import "../styles/main.css";
 
 const dmSans = DM_Sans({
@@ -30,8 +29,7 @@ export default function RootLayout({
     <html lang="en" className={`${dmSans.variable} ${notoKhmer.variable}`}>
       <body>
         <Header />
-        <main>{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

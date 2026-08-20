@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Icon, type IconName } from "../components/Icons";
-import { DashboardMock, PhoneMocks } from "../components/Mockups";
+import { Icon, type IconName } from "../../components/Icons";
+import { DashboardMock, PhoneMocks } from "../../components/Mockups";
 
 const popularSearches = [
   "Hair Salon",

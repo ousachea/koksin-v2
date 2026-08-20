@@ -1923,7 +1923,11 @@ a {
 
   .disc-hero-chip:active,
   .disc-search-btn:active,
-  .disc-cats-toggle:active {
+  .disc-cats-toggle:active,
+  .dfoot-cta-primary:active,
+  .dfoot-cta-secondary:active,
+  .dfoot-submit:active,
+  .dfoot-social:active {
     scale: 1;
   }
 
@@ -2968,6 +2972,288 @@ a {
   color: var(--blue);
 }
 
+/* ── Discovery layout: footer ────────────────────────────────────── */
+.dfoot {
+  position: relative;
+  margin-top: 88px;
+  padding: 88px var(--gutter) 40px;
+}
+
+.dfoot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(46% 62% at 12% 30%, rgba(8, 144, 218, 0.22) 0%, rgba(8, 144, 218, 0) 72%),
+    radial-gradient(44% 58% at 88% 34%, rgba(120, 190, 240, 0.26) 0%, rgba(120, 190, 240, 0) 74%),
+    radial-gradient(52% 56% at 70% 92%, rgba(247, 214, 168, 0.38) 0%, rgba(247, 214, 168, 0) 74%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 260px);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 260px);
+}
+
+.dfoot-cta {
+  position: relative;
+  max-width: 620px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+
+.dfoot-cta-title {
+  margin: 0 0 12px;
+  text-wrap: balance;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.dfoot-cta-text {
+  margin: 0 0 24px;
+  text-wrap: pretty;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.dfoot-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dfoot-cta-primary {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: var(--blue);
+  box-shadow: 0 10px 24px -14px rgba(8, 144, 218, 0.9);
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  transition-property: background-color, scale;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.dfoot-cta-primary:hover {
+  background: var(--blue-dark);
+}
+
+.dfoot-cta-primary:active {
+  scale: 0.96;
+}
+
+.dfoot-cta-secondary {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow-border);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition-property: box-shadow, scale;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.dfoot-cta-secondary:hover {
+  box-shadow: var(--shadow-border-hover);
+}
+
+.dfoot-cta-secondary:active {
+  scale: 0.96;
+}
+
+.dfoot-panel {
+  position: relative;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 36px 32px 20px;
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  backdrop-filter: blur(6px);
+  outline: var(--image-outline);
+  outline-offset: -1px;
+}
+
+.dfoot-top {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 2.1fr;
+  gap: 48px;
+  padding-bottom: 28px;
+}
+
+.dfoot-brand-col {
+  max-width: 330px;
+}
+
+.dfoot-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.dfoot-brand-mark {
+  width: 22px;
+  height: 22px;
+  color: var(--blue);
+}
+
+.dfoot-brand-word {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--blue);
+}
+
+.dfoot-signup-label {
+  margin: 0 0 12px;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.dfoot-form {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 5px 5px 6px;
+  background: var(--surface);
+  border-radius: 999px;
+  box-shadow: var(--shadow-border);
+}
+
+.dfoot-input {
+  flex: 1;
+  min-width: 0;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.dfoot-submit {
+  min-height: 34px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition-property: background-color, scale;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.dfoot-submit:hover {
+  background: #0f2028;
+}
+
+.dfoot-submit:active {
+  scale: 0.96;
+}
+
+.dfoot-fineprint {
+  margin: 12px 0 0;
+  max-width: 42ch;
+  text-wrap: pretty;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--muted-light);
+}
+
+.dfoot-socials {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.dfoot-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow-border);
+  color: var(--muted);
+  transition-property: color, box-shadow, scale;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.dfoot-social:hover {
+  color: var(--blue);
+  box-shadow: var(--shadow-border-hover);
+}
+
+.dfoot-social:active {
+  scale: 0.96;
+}
+
+.dfoot-social-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.dfoot-links {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.dfoot-heading {
+  margin: 0 0 12px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted-light);
+}
+
+.dfoot-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dfoot-item {
+  margin-bottom: 9px;
+}
+
+.dfoot-link {
+  font-size: 13px;
+  color: var(--ink);
+  transition: color 150ms ease-out;
+}
+
+.dfoot-link:hover {
+  color: var(--blue);
+}
+
+.dfoot-bottom {
+  padding-top: 18px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.dfoot-legal {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
 /* ── Discovery layout: responsive ────────────────────────────────── */
 @media (max-width: 1100px) {
   .disc-cards {
@@ -2988,6 +3274,15 @@ a {
 
   .disc-city-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dfoot-top {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .dfoot-links {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -3065,5 +3360,26 @@ a {
   .disc-hero-chip-icon {
     width: 13px;
     height: 13px;
+  }
+
+  .dfoot {
+    margin-top: 56px;
+    padding: 56px 16px 24px;
+  }
+
+  .dfoot-cta-title {
+    font-size: 27px;
+  }
+
+  .dfoot-cta-actions {
+    flex-wrap: wrap;
+  }
+
+  .dfoot-panel {
+    padding: 24px 16px 16px;
+  }
+
+  .dfoot-links {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
