@@ -1,10 +1,14 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { Icon } from "./Icons";
+import CategoryChips from "./CategoryChips";
+import DateField from "./DateField";
+import HeroGlow from "./HeroGlow";
+import LocationField from "./LocationField";
 import { DashboardMock, PhoneMocks } from "./Mockups";
 import {
   cityLinks,
   newToKoksin,
-  popularSearches,
   recommended,
   reviews,
   trending,
@@ -77,7 +81,7 @@ export default function HomeDiscovery() {
   return (
     <>
       <section className="disc-hero">
-        <div className="disc-hero-glow" aria-hidden="true" />
+        <HeroGlow />
         <div className="disc-hero-inner">
           <h1 className="disc-hero-title">Book Cambodia&apos;s best local services</h1>
           <p className="disc-hero-sub">
@@ -89,14 +93,8 @@ export default function HomeDiscovery() {
               <Icon name="grid" className="disc-search-icon" />
               <span className="disc-search-text">All services</span>
             </label>
-            <label className="disc-search-field">
-              <Icon name="pin" className="disc-search-icon" />
-              <span className="disc-search-text">Anywhere in Cambodia</span>
-            </label>
-            <label className="disc-search-field-last">
-              <Icon name="calendar" className="disc-search-icon" />
-              <span className="disc-search-text">Any date</span>
-            </label>
+            <LocationField />
+            <DateField />
             <button className="disc-search-btn" type="submit">
               Search
             </button>
@@ -105,13 +103,7 @@ export default function HomeDiscovery() {
           <Link className="disc-hero-app" href="/about">
             Get the app <span className="disc-hero-app-soon">soon</span>
           </Link>
-          <div className="disc-hero-chips">
-            {popularSearches.slice(0, 6).map((p) => (
-              <Link className="disc-hero-chip" href="/about" key={p}>
-                {p}
-              </Link>
-            ))}
-          </div>
+          <CategoryChips />
         </div>
       </section>
 

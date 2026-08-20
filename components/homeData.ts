@@ -111,6 +111,50 @@ export const appFeatures: { icon: IconName; label: string }[] = [
   { icon: "user", label: "Same account as the web" },
 ];
 
+// The 19 bookable categories, shown as the discovery hero's chip cloud, in
+// popularity order — the hero shows the leading few until "See all" is used.
+// `tint` groups them into colour families, and `motion` picks the hover
+// animation so each icon moves in a way that suits what it depicts: tools
+// turn, bodies bob, beauty details pulse.
+export const heroCategories: {
+  icon: IconName;
+  label: string;
+  tint: "beauty" | "wellness" | "home" | "pet" | "auto";
+  motion: "spin" | "bob" | "pulse";
+}[] = [
+  { icon: "hair", label: "Hair", tint: "beauty", motion: "pulse" },
+  { icon: "barber", label: "Barber", tint: "beauty", motion: "spin" },
+  { icon: "nails", label: "Nails", tint: "beauty", motion: "pulse" },
+  { icon: "facial", label: "Facial", tint: "beauty", motion: "pulse" },
+  { icon: "waxing", label: "Waxing", tint: "beauty", motion: "pulse" },
+  { icon: "tattoo", label: "Tattoo", tint: "beauty", motion: "pulse" },
+  { icon: "massage", label: "Massage", tint: "wellness", motion: "bob" },
+  { icon: "brows", label: "Brows", tint: "beauty", motion: "pulse" },
+  { icon: "makeup", label: "Makeup", tint: "beauty", motion: "pulse" },
+  { icon: "cleaning", label: "Cleaning", tint: "home", motion: "spin" },
+  { icon: "yoga", label: "Yoga", tint: "wellness", motion: "bob" },
+  { icon: "pilates", label: "Pilates", tint: "wellness", motion: "bob" },
+  { icon: "gym", label: "Gym", tint: "wellness", motion: "bob" },
+  { icon: "physio", label: "Physio", tint: "wellness", motion: "bob" },
+  { icon: "laundry", label: "Laundry", tint: "home", motion: "spin" },
+  { icon: "repairs", label: "Repairs", tint: "home", motion: "spin" },
+  { icon: "pest", label: "Pest", tint: "home", motion: "spin" },
+  { icon: "pet", label: "Pet", tint: "pet", motion: "bob" },
+  { icon: "auto", label: "Car Wash", tint: "auto", motion: "spin" },
+];
+
+// The six launch cities, with centre coordinates. The discovery search
+// resolves a visitor's nearest city against these in the browser, so their
+// coordinates never leave the page.
+export const launchCities = [
+  { name: "Phnom Penh", lat: 11.5564, lng: 104.9282 },
+  { name: "Siem Reap", lat: 13.3671, lng: 103.8448 },
+  { name: "Preah Sihanouk", lat: 10.627, lng: 103.522 },
+  { name: "Battambang", lat: 13.0957, lng: 103.2022 },
+  { name: "Kampot", lat: 10.6104, lng: 104.181 },
+  { name: "Kandal", lat: 11.4833, lng: 104.95 },
+];
+
 // ── Discovery layout only ────────────────────────────────────────────
 export type Partner = {
   name: string;
