@@ -1959,7 +1959,7 @@ a {
   width: 76%;
   height: 92%;
   background: radial-gradient(closest-side, rgba(8, 144, 218, 0.34) 0%, rgba(8, 144, 218, 0) 100%);
-  transform: translate(calc(var(--glow-x, 0px) * 1.35), calc(var(--glow-y, 0px) * 1.35));
+  transform: translate(calc(var(--glow-x, 0px) * 1.6), calc(var(--glow-y, 0px) * 1.6));
   animation: blob-a 18s ease-in-out infinite;
   will-change: transform, translate, scale;
 }
@@ -1971,7 +1971,7 @@ a {
   width: 68%;
   height: 84%;
   background: radial-gradient(closest-side, rgba(120, 190, 240, 0.38) 0%, rgba(120, 190, 240, 0) 100%);
-  transform: translate(calc(var(--glow-x, 0px) * 0.6), calc(var(--glow-y, 0px) * 0.6));
+  transform: translate(calc(var(--glow-x, 0px) * 0.45), calc(var(--glow-y, 0px) * 0.45));
   animation: blob-b 22s ease-in-out infinite;
   will-change: transform, translate, scale;
 }
@@ -1983,7 +1983,7 @@ a {
   width: 62%;
   height: 78%;
   background: radial-gradient(closest-side, rgba(247, 214, 168, 0.55) 0%, rgba(247, 214, 168, 0) 100%);
-  transform: translate(calc(var(--glow-x, 0px) * 1.05), calc(var(--glow-y, 0px) * 1.05));
+  transform: translate(calc(var(--glow-x, 0px) * 1.15), calc(var(--glow-y, 0px) * 1.15));
   animation: blob-c 26s ease-in-out infinite;
   will-change: transform, translate, scale;
 }

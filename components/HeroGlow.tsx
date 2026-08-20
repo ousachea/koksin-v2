@@ -5,12 +5,12 @@ import { useEffect, useRef } from "react";
 // How far the glow leans toward the pointer, in pixels, at the edges of the
 // viewport. Each blob scales this differently (see --glow-x in the stylesheet)
 // so the gradient reshapes as it follows rather than sliding rigidly.
-const RANGE_X = 80;
-const RANGE_Y = 55;
+const RANGE_X = 190;
+const RANGE_Y = 130;
 
 // Fraction of the remaining distance covered each frame. Low enough that the
 // glow trails the cursor and settles softly instead of snapping to it.
-const EASING = 0.09;
+const EASING = 0.14;
 
 // Below this, the glow has effectively arrived and the loop can stop until
 // the pointer moves again — no idle animation frames.
