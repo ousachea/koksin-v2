@@ -24,6 +24,7 @@ function Rail({ title, items }: { title: string; items: Partner[] }) {
         {items.map((p) => (
           <article className="disc-card" key={p.name}>
             <Link className={`disc-card-photo disc-card-photo-${p.tone}`} href="/about">
+              <Icon name={p.icon} className="disc-card-glyph" />
               {p.badge ? <span className="disc-card-badge">{p.badge}</span> : null}
               <span className="disc-card-heart" aria-hidden="true">
                 ♡

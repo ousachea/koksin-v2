@@ -75,9 +75,9 @@ a {
 }
 
 .header-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 10px var(--gutter);
@@ -87,6 +87,7 @@ a {
   display: flex;
   align-items: center;
   gap: 9px;
+  justify-self: start;
 }
 
 .brand-mark {
@@ -102,10 +103,18 @@ a {
   color: var(--blue);
 }
 
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-self: center;
+}
+
 .header-actions {
   display: flex;
   align-items: center;
   gap: 8px;
+  justify-self: end;
 }
 
 .header-link {
@@ -2099,7 +2108,7 @@ a {
 
 /* ── Discovery layout: partner rails ─────────────────────────────── */
 .disc-rails {
-  max-width: 1200px;
+  max-width: var(--maxw);
   margin: 0 auto;
   padding: 24px var(--gutter) 0;
 }
@@ -2177,7 +2186,7 @@ a {
 .disc-card-photo {
   position: relative;
   display: block;
-  height: 158px;
+  aspect-ratio: 7 / 4;
   margin-bottom: 10px;
   border-radius: 12px;
   outline: var(--image-outline);
@@ -2203,6 +2212,23 @@ a {
 
 .disc-card-photo-d {
   background: linear-gradient(135deg, #f0e6db, #dcc7b2 55%, #bfa189);
+}
+
+.disc-card-glyph {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 76px;
+  height: 76px;
+  translate: -50% -50%;
+  color: var(--surface);
+  opacity: 0.72;
+  stroke-width: 1;
+  transition: opacity 200ms var(--ease-out);
+}
+
+.disc-card:hover .disc-card-glyph {
+  opacity: 0.9;
 }
 
 .disc-card-badge {
@@ -2280,7 +2306,7 @@ a {
   grid-template-columns: 5fr 7fr;
   align-items: end;
   gap: 40px;
-  max-width: 1200px;
+  max-width: var(--maxw);
   margin: 0 auto;
   padding: 32px var(--gutter) 0;
 }
@@ -2330,18 +2356,17 @@ a {
 
 .disc-app-visual {
   position: relative;
-  height: 400px;
+  height: 490px;
   overflow: hidden;
 }
 
 .disc-app-visual .phones {
-  height: 400px;
   margin: 0;
 }
 
 /* ── Discovery layout: reviews ───────────────────────────────────── */
 .disc-reviews {
-  max-width: 1200px;
+  max-width: var(--maxw);
   margin: 0 auto;
   padding: 56px var(--gutter) 0;
 }
@@ -2491,7 +2516,7 @@ a {
   grid-template-columns: 5fr 7fr;
   align-items: end;
   gap: 40px;
-  max-width: 1200px;
+  max-width: var(--maxw);
   margin: 0 auto;
   padding: 88px var(--gutter) 0;
 }
@@ -2579,7 +2604,7 @@ a {
 
 /* ── Discovery layout: browse by city ────────────────────────────── */
 .disc-cities {
-  max-width: 1200px;
+  max-width: var(--maxw);
   margin: 0 auto;
   padding: 88px var(--gutter) 96px;
 }
@@ -2745,5 +2770,26 @@ a {
 
   .disc-city-grid {
     grid-template-columns: 1fr;
+  }
+
+  .disc-app-copy {
+    padding-bottom: 0;
+  }
+
+  .disc-app-visual {
+    height: 280px;
+  }
+
+  .disc-app-visual .phones {
+    scale: 0.55;
+    transform-origin: top center;
+  }
+
+  .disc-stats {
+    padding-top: 64px;
+  }
+
+  .disc-stats-big-label {
+    margin-bottom: 28px;
   }
 }

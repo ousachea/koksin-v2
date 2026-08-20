@@ -116,6 +116,7 @@ export type Partner = {
   name: string;
   area: string;
   category: string;
+  icon: IconName;
   reviews: number;
   rating: string;
   tone: string;
@@ -123,24 +124,24 @@ export type Partner = {
 };
 
 export const recommended: Partner[] = [
-  { name: "Aura Spa & Wellness", area: "BKK1, Phnom Penh", category: "Massage & Spa", reviews: 128, rating: "5.0", tone: "a", badge: "Featured" },
-  { name: "Sharp Fade Barbers", area: "Toul Kork, Phnom Penh", category: "Barbershop", reviews: 96, rating: "4.9", tone: "b", badge: "Featured" },
-  { name: "Polished Nail Atelier", area: "Aeon 1, Phnom Penh", category: "Nail Salon", reviews: 214, rating: "4.8", tone: "c", badge: "Featured" },
-  { name: "Serenity Spa Lounge", area: "Riverside, Phnom Penh", category: "Massage & Spa", reviews: 342, rating: "5.0", tone: "d", badge: "Featured" },
+  { name: "Aura Spa & Wellness", area: "BKK1, Phnom Penh", category: "Massage & Spa", icon: "massage", reviews: 128, rating: "5.0", tone: "a", badge: "Featured" },
+  { name: "Sharp Fade Barbers", area: "Toul Kork, Phnom Penh", category: "Barbershop", icon: "barber", reviews: 96, rating: "4.9", tone: "b", badge: "Featured" },
+  { name: "Polished Nail Atelier", area: "Aeon 1, Phnom Penh", category: "Nail Salon", icon: "nails", reviews: 214, rating: "4.8", tone: "c", badge: "Featured" },
+  { name: "Serenity Spa Lounge", area: "Riverside, Phnom Penh", category: "Massage & Spa", icon: "massage", reviews: 342, rating: "5.0", tone: "d", badge: "Featured" },
 ];
 
 export const newToKoksin: Partner[] = [
-  { name: "Furry Friends Spa", area: "Wat Bo, Siem Reap", category: "Pet Grooming", reviews: 12, rating: "5.0", tone: "c", badge: "New" },
-  { name: "Riverside Med Spa", area: "Riverside, Phnom Penh", category: "Facial & Skincare", reviews: 8, rating: "4.9", tone: "d", badge: "New" },
-  { name: "Sun Salutation Yoga", area: "BKK3, Phnom Penh", category: "Yoga Studio", reviews: 21, rating: "5.0", tone: "a", badge: "New" },
-  { name: "Bright Home Services", area: "Chamkarmon, Phnom Penh", category: "Cleaning Service", reviews: 15, rating: "4.8", tone: "b", badge: "New" },
+  { name: "Furry Friends Spa", area: "Wat Bo, Siem Reap", category: "Pet Grooming", icon: "pet", reviews: 12, rating: "5.0", tone: "c", badge: "New" },
+  { name: "Riverside Med Spa", area: "Riverside, Phnom Penh", category: "Facial & Skincare", icon: "facial", reviews: 8, rating: "4.9", tone: "d", badge: "New" },
+  { name: "Sun Salutation Yoga", area: "BKK3, Phnom Penh", category: "Yoga Studio", icon: "yoga", reviews: 21, rating: "5.0", tone: "a", badge: "New" },
+  { name: "Bright Home Services", area: "Chamkarmon, Phnom Penh", category: "Cleaning Service", icon: "cleaning", reviews: 15, rating: "4.8", tone: "b", badge: "New" },
 ];
 
 export const trending: Partner[] = [
-  { name: "Needle & Thread Studio", area: "Toul Tom Poung, Phnom Penh", category: "Tattoo & Piercing", reviews: 87, rating: "4.9", tone: "b" },
-  { name: "Glow Brow Bar", area: "Daun Penh, Phnom Penh", category: "Brows & Lashes", reviews: 156, rating: "5.0", tone: "c" },
-  { name: "Riverside Auto Detail", area: "Chroy Changvar, Phnom Penh", category: "Car Wash & Detailing", reviews: 64, rating: "4.8", tone: "d" },
-  { name: "Iron House Gym", area: "Sen Sok, Phnom Penh", category: "Gym & Personal Training", reviews: 231, rating: "4.9", tone: "a" },
+  { name: "Needle & Thread Studio", area: "Toul Tom Poung, Phnom Penh", category: "Tattoo & Piercing", icon: "tattoo", reviews: 87, rating: "4.9", tone: "b" },
+  { name: "Glow Brow Bar", area: "Daun Penh, Phnom Penh", category: "Brows & Lashes", icon: "brows", reviews: 156, rating: "5.0", tone: "c" },
+  { name: "Riverside Auto Detail", area: "Chroy Changvar, Phnom Penh", category: "Car Wash & Detailing", icon: "auto", reviews: 64, rating: "4.8", tone: "d" },
+  { name: "Iron House Gym", area: "Sen Sok, Phnom Penh", category: "Gym & Personal Training", icon: "gym", reviews: 231, rating: "4.9", tone: "a" },
 ];
 
 export const reviews = [

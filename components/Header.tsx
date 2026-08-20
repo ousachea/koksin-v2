@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Icon, LogoMark } from "./Icons";
 
-// Sticky top bar: brand on the left, partner link and two icon buttons right.
+// Sticky top bar: brand left, nav centered, partner link and icon buttons right.
 export default function Header() {
   return (
     <header className="site-header">
@@ -10,6 +10,11 @@ export default function Header() {
           <LogoMark className="brand-mark" />
           <span className="brand-word">KOKSIN</span>
         </Link>
+        <nav className="header-nav" aria-label="Primary">
+          <Link className="header-link" href="/discovery">
+            Discover
+          </Link>
+        </nav>
         <div className="header-actions">
           <Link className="header-link" href="/about">
             Become a partner
