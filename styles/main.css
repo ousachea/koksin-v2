@@ -1937,7 +1937,7 @@ a {
     transition: none;
   }
 
-  .dphone:hover {
+  .disc-app-shot:hover {
     translate: 0;
     scale: 1;
   }
@@ -2660,64 +2660,19 @@ a {
   position: relative;
 }
 
-.disc-app-plate {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 340px;
-  border-radius: 28px 28px 0 0;
-  background: #dcecfa;
-}
-
-.dphones {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 14px;
-  padding: 18px 0 26px;
-}
-
-.dphone {
-  flex: none;
-  padding: 7px;
-  background: linear-gradient(160deg, #333b42 0%, #0d1114 42%);
-  border-radius: 34px;
-  box-shadow: 0 26px 50px -30px oklch(0 0 0 / 0.6);
-  transition-property: translate, scale, box-shadow;
-  transition-duration: 340ms;
+.disc-app-shot {
+  display: block;
+  width: min(980px, 94vw);
+  height: auto;
+  margin: 0 auto;
+  transition-property: translate, scale;
+  transition-duration: 380ms;
   transition-timing-function: var(--ease-out);
 }
 
-.dphone:hover {
-  translate: 0 -14px;
-  scale: 1.02;
-  box-shadow: 0 38px 64px -30px oklch(0 0 0 / 0.5);
-  z-index: 3;
-}
-
-.dphone-a {
-  width: 200px;
-  margin-top: 48px;
-}
-
-.dphone-b {
-  width: 226px;
-  z-index: 2;
-}
-
-.dphone-c {
-  width: 200px;
-  margin-top: 64px;
-}
-
-.dphone-screen {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 27px;
-  background: var(--background);
+.disc-app-shot:hover {
+  translate: 0 -10px;
+  scale: 1.01;
 }
 
 /* ── Discovery layout: reviews ───────────────────────────────────── */
@@ -3423,37 +3378,8 @@ a {
     flex-wrap: wrap;
   }
 
-  .disc-app-plate {
-    height: 170px;
-    border-radius: 18px 18px 0 0;
-  }
-
-  .dphones {
-    gap: 8px;
-    padding: 10px 0 16px;
-  }
-
-  .dphone {
-    padding: 4px;
-    border-radius: 22px;
-  }
-
-  .dphone-a {
-    width: 104px;
-    margin-top: 20px;
-  }
-
-  .dphone-b {
-    width: 118px;
-  }
-
-  .dphone-c {
-    width: 104px;
-    margin-top: 28px;
-  }
-
-  .dphone-screen {
-    border-radius: 18px;
+  .disc-app-shot {
+    width: 100%;
   }
 
   .disc-stats {

@@ -6,7 +6,6 @@ import DateField from "./DateField";
 import HeroGlow from "./HeroGlow";
 import LocationField from "./LocationField";
 import { DashboardMock } from "./Mockups";
-import PhoneShots from "./PhoneShots";
 import {
   cityLinks,
   newToKoksin,
@@ -117,8 +116,15 @@ export default function HomeDiscovery() {
           </div>
         </div>
         <div className="disc-app-visual">
-          <span className="disc-app-plate" aria-hidden="true" />
-          <PhoneShots />
+          <img
+            className="disc-app-shot"
+            src="/app/app-preview.webp"
+            alt="The KOKSIN app on three iPhones, showing upcoming bookings, the home screen of service categories, and a map of nearby partners"
+            width={1500}
+            height={1313}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </section>
 
